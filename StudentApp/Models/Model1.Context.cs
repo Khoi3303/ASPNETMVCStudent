@@ -13,10 +13,10 @@ namespace StudentApp.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class StudentsDBEntities : DbContext
+    public partial class SchoolDBEntities : DbContext
     {
-        public StudentsDBEntities()
-            : base("name=StudentsDBEntities")
+        public SchoolDBEntities()
+            : base("name=SchoolDBEntities")
         {
         }
     
@@ -25,6 +25,10 @@ namespace StudentApp.Models
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<tblStudents> tblStudents { get; set; }
+        public virtual DbSet<Courses> Courses { get; set; }
+        public virtual DbSet<Departments> Departments { get; set; }
+        public virtual DbSet<Enrollments> Enrollments { get; set; }
+        public virtual DbSet<Instructors> Instructors { get; set; }
+        public virtual DbSet<Students> Students { get; set; }
     }
 }

@@ -4,8 +4,15 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="8e81fefda37b4b81b885f75ae238ebd2" Name="Diagram1">
-        <EntityTypeShape EntityType="StudentsDBModel.tblStudents" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+      <Diagram DiagramId="42df3ca2136148b2a1bbacceb0ee612e" Name="Diagram1">
+        <EntityTypeShape EntityType="SchoolDBModel.Courses" Width="1.5" PointX="3" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="SchoolDBModel.Departments" Width="1.5" PointX="0.75" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="SchoolDBModel.Enrollments" Width="1.5" PointX="5.25" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="SchoolDBModel.Instructors" Width="1.5" PointX="5.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SchoolDBModel.Students" Width="1.5" PointX="3" PointY="5" IsExpanded="true" />
+        <AssociationConnector Association="SchoolDBModel.FK__Courses__Departm__60A75C0F" ManuallyRouted="false" />
+        <AssociationConnector Association="SchoolDBModel.FK__Enrollmen__Cours__656C112C" ManuallyRouted="false" />
+        <AssociationConnector Association="SchoolDBModel.FK__Enrollmen__Stude__66603565" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

@@ -12,12 +12,14 @@ namespace StudentApp.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class tblStudents
+    public partial class Enrollments
     {
-        public int StudentID { get; set; }
-        public string FirstName { get; set; }
-        public string LastName { get; set; }
-        public string Email { get; set; }
-        public Nullable<System.DateTime> EnrollmentDate { get; set; }
+        public int EnrollmentID { get; set; }
+        public Nullable<int> CourseID { get; set; }
+        public Nullable<int> StudentID { get; set; }
+        public Nullable<decimal> Grade { get; set; }
+    
+        public virtual Courses Courses { get; set; }
+        public virtual Students Students { get; set; }
     }
 }
