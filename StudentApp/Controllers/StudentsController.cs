@@ -14,10 +14,21 @@ namespace StudentApp.Controllers
     {
         private SchoolDBEntities db = new SchoolDBEntities();
 
-        // GET: Students
-        public ActionResult Index()
+        // Thêm tham số searchString vào hàm Index
+        public ActionResult Index(string searchString)
         {
-            return View(db.Students.ToList());
+            // Lấy toàn bộ danh sách sinh viên
+            var students = from s in db.Students
+                           select s;
+
+            // Nếu người dùng có nhập từ khóa, thực hiện lọc
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                students = students.Where(s => s.LastName.Contains(searchString)
+                                            || s.FirstName.Contains(searchString));
+            }
+
+            return View(students.ToList());
         }
 
         // GET: Students/Details/5

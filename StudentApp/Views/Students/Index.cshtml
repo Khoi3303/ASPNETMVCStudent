@@ -10,7 +10,15 @@
     <p>
         @Html.ActionLink("Thêm Sinh viên Mới", "Create", null, new { @class = "btn btn-primary" })
     </p>
-
+    @using (Html.BeginForm("Index", "Students", FormMethod.Get))
+    {
+        <div class="form-inline" style="margin-bottom: 20px;">
+            <p>
+                Tìm theo tên: @Html.TextBox("SearchString", ViewBag.CurrentFilter as string, new { @class = "form-control", placeholder = "Nhập tên sinh viên..." })
+                <input type="submit" value="Tìm kiếm" class="btn btn-info" />
+            </p>
+        </div>
+    }
     <table class="table table-striped table-hover table-bordered">
         <thead class="thead-dark">
             <tr>
