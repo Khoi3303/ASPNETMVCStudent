@@ -1,0 +1,12 @@
+﻿@{ ViewBag.Title = "Báo cáo"; }
+<h2>Xuất báo cáo sinh viên theo môn học</h2>
+
+@using (Html.BeginForm("Generate", "Report", FormMethod.Post))
+{
+    <div class="form-group">
+        <label>Chọn môn học:</label>
+        @Html.DropDownList("selectedCourseID", (SelectList)ViewBag.Courses, "-- Chọn --", new { @class = "form-control" })
+    </div>
+    <br />
+    <button type="submit" class="btn btn-primary">Tải báo cáo PDF</button>
+}
